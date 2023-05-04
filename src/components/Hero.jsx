@@ -2,16 +2,35 @@ import Script from "next/script"
 import Image from "next/image"
 import Link from "next/link"
 
-import headshot from "/public/static/headshot.jpg"
+import headshot from "/public/static/headshot.png"
+
+// Threejs
+import { Canvas } from "@react-three/fiber"
+import { MeshDistortMaterial, OrbitControls, Sphere } from "@react-three/drei"
 
 export default function Hero() {
   return (
-    <div className="relative h-[85vh] w-full flex flex-col justify-center items-center px-[15%]">
-      <div className="flex flex-row justify-between h-full w-full space-x-24">
-        <section className="h-full w-[50%] flex flex-row justify-center items-center">
-          <Image src={headshot} alt='Lex Van-Nugent' className=" h-[70%] w-auto object-scale-down rounded-full relative top-0 left-0 animate-bounceSlow" />
+    <div className="h-[80vh] w-full flex flex-col justify-center items-center px-[10%]">
+      <div className="relative flex flex-row justify-between h-full w-full space-x-[10%]">
+        {/* Left Side */}
+        <section className="absolute top-0 left-0 h-full w-[50%] flex flex-row justify-center items-center">
+          <Canvas className="absolute top-0 left-0 w-full h-full">
+            <OrbitControls enableZoom={false} enableRotate={false}/>
+            <ambientLight intensity={1} />
+            <directionalLight position={[1, 2, 1]} />
+            <Sphere args={[1,100, 200]} scale={2.6}>
+              <MeshDistortMaterial
+                color='#333366'
+                attach="material"
+                distort={0.4}
+                speed={1.2}
+              />
+            </Sphere>
+          </Canvas>
+          <Image src={headshot} alt='Lex Van-Nugent' className="absolute h-[50vh] flex flex-row justify-center items-center w-auto object-contain rounded-full animate-bounceSlow" />
         </section>
-        <section className="h-[80%] w-[50%] flex flex-col justify-center items-center space-y-4">
+        {/* Right Side */}
+        <section className="absolute top-0 right-0 h-[80%] w-[50%] flex grow flex-col justify-center items-center space-y-4">
           <h1 className="flex flex-col w-full">
             <span className="text-3xl">Hello, I'm</span>
             <strong className="text-6xl">Lex Van-Nugent</strong>
@@ -23,10 +42,10 @@ export default function Hero() {
           </div>
           <div className="flex flex-row h-auto w-full justify-start pt-2">
             <div className="w-[30%]">
-              <Link href='/contact' className="p-2 bg-secondary rounded-lg">Hire Me</Link>
+              <Link href='/contact' className="p-2 bg-secondary/80 rounded-lg shadow-md shadow-black">Hire Me</Link>
             </div>
             <div className="w-[30%]">
-              <Link href='/portfolio' className="p-2 bg-secondary rounded-lg">View Portfolio</Link>
+              <Link href='/portfolio' className="p-2 bg-secondary/80 rounded-lg shadow-md shadow-black">View Portfolio</Link>
             </div>
           </div>
         </section>

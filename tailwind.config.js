@@ -23,10 +23,10 @@ module.exports = {
       keyframes: {
         'bounceSlow': {
           '0%, 100%': { 
-            transform: 'translateY(1%)',
+            transform: 'translateY(4%)',
           },
           '50%': {
-            transform: 'translateY(0%)',
+            transform: 'translateY(2%)',
           },
         },
      },
