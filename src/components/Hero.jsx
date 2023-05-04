@@ -6,16 +6,17 @@ import headshot from "/public/static/headshot.png"
 
 // Threejs
 import { Canvas } from "@react-three/fiber"
-import { MeshDistortMaterial, OrbitControls, Sphere } from "@react-three/drei"
+import { MeshDistortMaterial, OrbitControls, Shadow, Sphere } from "@react-three/drei"
 
 export default function Hero() {
+
   return (
     <div className="h-[80vh] w-full flex flex-col justify-center items-center px-[10%]">
       <div className="relative flex flex-row justify-between h-full w-full space-x-[10%]">
         {/* Left Side */}
         <section className="absolute top-0 left-0 h-full w-[50%] flex flex-row justify-center items-center">
           <Canvas className="absolute top-0 left-0 w-full h-full">
-            <OrbitControls enableZoom={false} enableRotate={false}/>
+            <OrbitControls enableZoom={false} enableRotate={true}/>
             <ambientLight intensity={1} />
             <directionalLight position={[1, 2, 1]} />
             <Sphere args={[1,100, 200]} scale={2.6}>
