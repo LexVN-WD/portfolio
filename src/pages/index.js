@@ -9,7 +9,7 @@ const lato = Lato({ subsets: ['latin'], weight: ['400'] })
 
 export default function Home() {
   return (
-    <main className={`flex min-h-screen min-w-screen flex-col items-center justify-between bg-primary ${lato.className}`}>
+    <main className={`flex min-h-screen min-w-screen flex-col items-center justify-between bg-primary bg-cubes ${lato.className}`}>
       <Nav />
       <Hero />
     </main>
