@@ -8,7 +8,7 @@ import headshot from "/public/static/headshot.png"
 
 // Threejs
 import { Canvas } from "@react-three/fiber"
-import { MeshDistortMaterial, OrbitControls, Shadow, Sphere } from "@react-three/drei"
+import { MeshDistortMaterial, OrbitControls, Sphere } from "@react-three/drei"
 
 export default function Hero() {
 
@@ -38,7 +38,7 @@ export default function Hero() {
         {/* Left Side */}
         <section className="absolute top-0 left-0 h-[95%] w-[50%] flex flex-row justify-center items-center">
           <Canvas className="absolute top-0 left-0 w-full h-full animate-bounceSlow">
-            <OrbitControls enableZoom={false} enableRotate={true}/>
+            <OrbitControls enableZoom={false} enableRotate={false}/>
             <ambientLight intensity={1} />
             <directionalLight position={[1, 2, 0]} />
             <Sphere args={[1,100, 200]} scale={2.5}>
