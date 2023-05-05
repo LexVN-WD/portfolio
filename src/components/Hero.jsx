@@ -78,7 +78,7 @@ export default function HeroBody() {
       typeSpeed: 50,
       backSpeed: 50,
       loop: true,
-      startDelay: 600,
+      startDelay: 500,
       backDelay: 1200,
       showCursor: true,
       cursorChar: "|",

@@ -9,8 +9,6 @@ import { useEffect, useState } from 'react'
 // ETC imports
 import tw from 'tailwind-styled-components'
 
-// Components
-import About from '../components/About'
 
 // Lazy load components
 const Hero = dynamic(() => import('../components/Hero'))
