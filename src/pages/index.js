@@ -10,24 +10,26 @@ import { useEffect, useState } from 'react'
 import tw from 'tailwind-styled-components'
 
 // Components
-import Loading from '../components/Loading';
 import About from '../components/About'
 
 // Lazy load components
 const Hero = dynamic(() => import('../components/Hero'))
+const Loading = dynamic(() => import('../components/Loading'))
 
 const lato = Lato({ subsets: ['latin'], weight: ['400'] })
 
 const LoadContainer = tw.div`
-  h-[100vh]
-  scroll-snap-type-y: mandatory;
-  scroll-behavior: smooth;
-  overflow-y: auto;
-  scrollbar-width: none;
-  bg-primary/80
+  h-screen
+  w-screen
+  bg-primary
+  overflow-y-hidden
   flex
   justify-center
   items-center
+  absolute
+  top-0
+  left-0
+  z-20
 `
 
 const MainContainer = tw.main`
@@ -57,18 +59,16 @@ export default function Home() {
 
   return (
     <>
-      {loading ? (
+      {loading && (
 
-        <LoadContainer>
+        <LoadContainer className={`${loading ? '' : `transition-opacity opacity-0`}`} >
           <Loading loading={loading} />
         </LoadContainer>
 
-      ) : (
-      
+      )}
       <MainContainer id='home' className={`${lato.className} ${loading  ? '' : 'animate-fadeIn bg-primary bg-cubes'}`}>
         <Hero />
       </MainContainer>
-      )}
     </>
   );
 }

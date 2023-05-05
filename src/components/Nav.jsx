@@ -50,7 +50,7 @@ export default function Nav() {
             <Image src={logo} contain="true" alt='logo' className="h-full w-auto"/>
           </Logo>
           <List>
-            <Link href="/home">Home</Link>
+            <Link href="/">Home</Link>
             <Link href="/about">About</Link>
             <Link href="/portfolio">Portfolio</Link>
             <Link href="/contact">Contact</Link>
