@@ -1,38 +1,33 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Lex Van-Nugent Personal Website
 
-## Getting Started
+This is a personal website portfolio for Lex Van-Nugent, a Junior Web Developer and Professional Voice Actor. The website is built using React and Next.js, and includes various components such as a navigation bar, a hero section with a typed animation, an about section with a photo gallery, and a loading spinner.
 
-First, run the development server:
+## Project Structure
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+This project showcases the following technology stacks:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Front-end:** React, Next.js, and various React libraries such as `react-typed` and `react-icons`.
+- **Styling:** CSS and the `tailwindcss` library.
+- **Back-end:** There doesn't appear to be any back-end code in this project, as it is a static website. However, it is possible that the website could be connected to a back-end in the future to add dynamic functionality.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+Overall, this project showcases a modern front-end stack using popular technologies such as React and Next.js, as well as a utility-first CSS framework (`tailwindcss`) for styling.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## Dependencies
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- @react-three/drei: ^9.66.3
+- @react-three/fiber: ^8.13.0
+- autoprefixer: 10.4.14
+- framer-motion: ^10.12.7
+- next: 13.4.0
+- postcss: 8.4.23
+- react: 18.2.0
+- react-dom: 18.2.0
+- react-icons: ^4.8.0
+- react-spinners: ^0.13.8
+- tailwindcss: 3.3.2
+- three: ^0.152.2
+- typed.js: ^2.0.16
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Dev Dependencies
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- tailwind-styled-components: ^2.2.0
