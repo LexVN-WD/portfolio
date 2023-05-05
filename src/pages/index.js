@@ -1,22 +1,52 @@
 // NextJs imports
 import Image from 'next/image'
 import { Lato } from 'next/font/google'
+import dynamic from 'next/dynamic'
 
 // React imports
 import { useEffect, useState } from 'react'
 
 // ETC imports
-
+import tw from 'tailwind-styled-components'
 
 // Components
-import Nav from '../components/Nav'
-import Hero from '../components/Hero'
 import Loading from '../components/Loading';
 import About from '../components/About'
 
+// Lazy load components
+const Hero = dynamic(() => import('../components/Hero'))
+
 const lato = Lato({ subsets: ['latin'], weight: ['400'] })
 
+const LoadContainer = tw.div`
+  h-[100vh]
+  scroll-snap-type-y: mandatory;
+  scroll-behavior: smooth;
+  overflow-y: auto;
+  scrollbar-width: none;
+  bg-primary/80
+  flex
+  justify-center
+  items-center
+`
+
+const MainContainer = tw.main`
+  h-[100vh]
+  scroll-snap-type-y-mandatory
+  scroll-behavior-smooth
+  overflow-y-auto
+  -ms-overflow-style-none
+  scrollbar-none
+  flex
+  flex-col
+  justify-between
+  items-center
+`
+
+
+
 export default function Home() {
+  const [showMore, setShowMore] = useState(false);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -28,14 +58,16 @@ export default function Home() {
   return (
     <>
       {loading ? (
-        <div className={`absolute top-0 left-0 w-[100vw] h-[100vh] flex justify-center items-center bg-primary/80 overflow-y-hidden  ${loading ? '' : `transition-opacity opacity-0`}`}>
+
+        <LoadContainer>
           <Loading loading={loading} />
-        </div>
-      ) : (<main id='home' className={`relative flex min-h-screen min-w-screen flex-col items-center justify-between bg-primary bg-cubes ${lato.className} ${loading  ? '' : 'animate-fadeIn'}`}>
-        <Nav />
+        </LoadContainer>
+
+      ) : (
+      
+      <MainContainer id='home' className={`${lato.className} ${loading  ? '' : 'animate-fadeIn bg-primary bg-cubes'}`}>
         <Hero />
-        <About />
-      </main>
+      </MainContainer>
       )}
     </>
   );

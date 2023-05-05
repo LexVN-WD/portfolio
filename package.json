@@ -12,6 +12,7 @@
     "@react-three/drei": "^9.66.3",
     "@react-three/fiber": "^8.13.0",
     "autoprefixer": "10.4.14",
+    "framer-motion": "^10.12.7",
     "next": "13.4.0",
     "postcss": "8.4.23",
     "react": "18.2.0",
@@ -20,5 +21,8 @@
     "tailwindcss": "3.3.2",
     "three": "^0.152.2",
     "typed.js": "^2.0.16"
+  },
+  "devDependencies": {
+    "tailwind-styled-components": "^2.2.0"
   }
 }
