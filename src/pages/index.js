@@ -12,6 +12,7 @@ import { useEffect, useState } from 'react'
 import Nav from '../components/Nav'
 import Hero from '../components/Hero'
 import Loading from '../components/Loading';
+import About from '../components/About'
 
 const lato = Lato({ subsets: ['latin'], weight: ['400'] })
 
@@ -26,15 +27,16 @@ export default function Home() {
 
   return (
     <>
-      {loading && (
-        <div className={`absolute top-0 left-0 w-[100vw] h-[100vh] flex justify-center items-center bg-primary/80  ${loading ? '' : `transition-opacity opacity-0`}`}>
+      {loading ? (
+        <div className={`absolute top-0 left-0 w-[100vw] h-[100vh] flex justify-center items-center bg-primary/80 overflow-y-hidden  ${loading ? '' : `transition-opacity opacity-0`}`}>
           <Loading loading={loading} />
         </div>
-      )}
-      <main className={`flex min-h-screen min-w-screen flex-col items-center justify-between bg-primary bg-cubes ${lato.className} opacity-0 ${loading  ? '' : 'transition opacity-100 ease-in duration-1000'}`}>
+      ) : (<main id='home' className={`relative flex min-h-screen min-w-screen flex-col items-center justify-between bg-primary bg-cubes ${lato.className} ${loading  ? '' : 'animate-fadeIn'}`}>
         <Nav />
         <Hero />
+        <About />
       </main>
+      )}
     </>
   );
 }

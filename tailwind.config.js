@@ -19,6 +19,7 @@ module.exports = {
       },
       animation: {
         'bounceSlow': 'bounceSlow 3s infinite',
+        'fadeIn': 'fadeIn 2s',
       },
       keyframes: {
         'bounceSlow': {
@@ -28,6 +29,14 @@ module.exports = {
           '50%': {
             transform: 'translateY(2%)',
           },
+        },
+        'fadeIn': {
+          '0%': {
+            opacity: '0',
+          },
+          '100%': {
+            opacity: '1',
+          }, 
         },
      },
      plugins: [],
