@@ -23,6 +23,7 @@ const Section = tw.div`
   flex-col
   items-center
   justify-between
+  text-white
 
 `;
 
@@ -33,7 +34,7 @@ const Container = tw.div`
   flex
   justify-around
   align-start
-  gap-50
+  gap-40
 `;
 
 const Left = tw.div`
@@ -42,8 +43,8 @@ const Left = tw.div`
   flex-col
   justify-center
   items-start
-  gap-3
-  w-[40%]
+  gap-2
+  w-[45%]
   h-[80vh]
 
 `;
@@ -67,7 +68,7 @@ const TypedContainer = tw.div`
 const Right = tw.div`
   flex-3
   relative
-  w-[50%]
+  w-[45%]
 
 `;
 
@@ -132,7 +133,7 @@ export default function HeroBody() {
           </NameContainer>
           <TypedContainer>
             <span className="text-5xl">A </span>
-            <span className="typer text-secondary text-5xl font-extrabold" ref={el}/>
+            <span className="typer text-secondary text-5xl font-bold" ref={el}/>
           </TypedContainer>
           <div className="flex flex-row h-auto w-full justify-start space-x-12">
             <div className="w-auto h-auto">
