@@ -13,8 +13,8 @@ import Link from 'next/link';
 const lato = Lato({ subsets: ['latin'], weight: ['400'] })
 
 const Section = tw.div`
-  h-screen
-  w-screen
+  h-[100vh]
+  w-[100vw]
   scroll-snap-align-center
   flex
   flex-col
@@ -109,7 +109,7 @@ const Photos = tw.div`
   items-center
   gap-5
   w-full
-  h-[85vh]
+  h-[80vh]
 `;
 
 const StudioPics = tw.div`
@@ -117,9 +117,9 @@ const StudioPics = tw.div`
   flex-col
   justify-center
   items-center
-  gap-2
+  gap-4
   w-auto
-  object-contain
+  object-fill
   h-full
 `;
 
@@ -140,8 +140,8 @@ export default function PortfolioInfo() {
          <Bottom>
           <Photos>
             <StudioPics>
-              <Image src={onlinestore} className='h-auto w-auto rounded-lg shadow-md hover:shadow-xl hover:shadow-black shadow-black'/>
-              <Image src={onlinestore2} className='h-auto w-auto object-cover rounded-lg shadow-md hover:shadow-xl hover:shadow-black shadow-black'/>
+              <Image src={onlinestore} className='h-[45%] w-auto object-cover rounded-lg shadow-md hover:shadow-xl hover:shadow-black shadow-black'/>
+              <Image src={onlinestore2} className='h-[45%] w-auto object-cover rounded-lg shadow-md hover:shadow-xl hover:shadow-black shadow-black'/>
             </StudioPics>
           </Photos>
         </Bottom>
