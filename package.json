@@ -18,6 +18,7 @@
     "react-dom": "18.2.0",
     "react-spinners": "^0.13.8",
     "tailwindcss": "3.3.2",
-    "three": "^0.152.2"
+    "three": "^0.152.2",
+    "typed.js": "^2.0.16"
   }
 }
