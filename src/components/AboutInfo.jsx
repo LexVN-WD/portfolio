@@ -21,7 +21,7 @@ const Section = tw.div`
   flex-col
   items-center
   justify-between
-
+  text-white
 `;
 
 const Container = tw.div`

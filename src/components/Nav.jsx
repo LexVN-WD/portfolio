@@ -12,6 +12,7 @@ const Section = tw.div`
   items-center
   w-[70vw]
   h-[15vh]
+  text-white
 `;
 
 const Container = tw.div`

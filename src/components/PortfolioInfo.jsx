@@ -5,11 +5,10 @@ import tw from 'tailwind-styled-components';
 import Nav from './Nav';
 
 //Media
-import studio from 'public/static/studio.jpg'
-import studio2 from 'public/static/studio2.jpg'
-import fishing from 'public/static/fishing.jpg'
-import { FaHtml5, FaCss3Alt, FaJsSquare, FaNodeJs, FaReact} from 'react-icons/fa'
-import { SiNextdotjs, SiPostgresql, SiTailwindcss, SiThreedotjs } from 'react-icons/si'
+import onlinestore from 'public/static/onlinestore.png'
+import onlinestore2 from 'public/static/onlinestore2.png'
+import { FaExternalLinkAlt } from 'react-icons/fa'
+import Link from 'next/link';
 
 const lato = Lato({ subsets: ['latin'], weight: ['400'] })
 
@@ -21,6 +20,7 @@ const Section = tw.div`
   flex-col
   items-center
   justify-between
+  text-white
 
 `;
 
@@ -59,12 +59,27 @@ const Title = tw.h1`
   text-6xl 
   text-center
   w-full
+  pt-4
+  gap-2
+  flex
+  flex-row
+  justify-center
+  hover:text-blue-300
 `;
 
 const Titles = tw.p`
   text-3xl
   text-center
   w-full
+`;
+
+const Store = tw.a`
+  text-6xl
+  text-center
+  font-bold
+  hover:border-b-4
+  hover:border-blue-300
+  hover:text-blue-300
 `;
 
 const Skills = tw.p`
@@ -94,17 +109,18 @@ const Photos = tw.div`
   items-center
   gap-5
   w-full
+  h-[85vh]
 `;
 
 const StudioPics = tw.div`
   flex
-  flex-row
+  flex-col
   justify-center
   items-center
-  gap-5
-  w-full
+  gap-2
+  w-auto
   object-contain
-  h-[50vh]
+  h-full
 `;
 
 
@@ -114,13 +130,21 @@ export default function PortfolioInfo() {
       <Nav />
       <Container>
         <Top>
-          <Titles>
-            Portfolio Placeholder
-          </Titles>
-          <Details>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt ab doloremque numquam vero minus quos est dolorum odit itaque officiis sint magni enim, consequatur, fuga accusamus voluptatem quaerat. Natus, possimus.
-          </Details>
+          <Title>
+            <Store target="_blank" href='https://lex-online-store.vercel.app'>Online-Store</Store>
+            <FaExternalLinkAlt />
+          </Title>
+          <Description>Simple E-Commerce store: Built with Nextjs and TailwindCSS</Description>
+          <Details> Placeholder Details: Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. </Details>
         </Top>
+         <Bottom>
+          <Photos>
+            <StudioPics>
+              <Image src={onlinestore} className='h-auto w-auto rounded-lg shadow-md hover:shadow-xl hover:shadow-black shadow-black'/>
+              <Image src={onlinestore2} className='h-auto w-auto object-cover rounded-lg shadow-md hover:shadow-xl hover:shadow-black shadow-black'/>
+            </StudioPics>
+          </Photos>
+        </Bottom>
       </Container>
     </Section>
   );
