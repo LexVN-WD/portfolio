@@ -2,6 +2,9 @@ import Image from "next/image"
 import logo from "/public/static/logo.png"
 import Link from "next/link"
 import tw from "tailwind-styled-components"
+import { Lato } from 'next/font/google'
+
+const lato = Lato({ subsets: ['latin'], weight: ['400'] })
 
 const Section = tw.div`
   flex
@@ -43,17 +46,17 @@ const List = tw.ul`
 
 export default function Nav() {
    return (
-    <Section>
+    <Section className={`${lato.className}`}>
       <Container>
         <Links>
           <Logo>
             <Image src={logo} contain="true" alt='logo' className="h-full w-auto"/>
           </Logo>
           <List>
-            <Link href="/">Home</Link>
-            <Link href="/about">About</Link>
-            <Link href="/portfolio">Portfolio</Link>
-            <Link href="/contact">Contact</Link>
+            <Link href="/" className="hover:border-b-4 hover:border-black">Home</Link>
+            <Link href="/about" className="hover:border-b-4 hover:border-black">About</Link>
+            <Link href="/portfolio" className="hover:border-b-4 hover:border-black">Portfolio</Link>
+            <Link href="/contact" className="hover:border-b-4 hover:border-black">Contact</Link>
           </List>
         </Links>
       </Container>

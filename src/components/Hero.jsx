@@ -4,6 +4,8 @@ import Link from "next/link"
 import Typed from "typed.js"
 import Nav from "./Nav"
 import Loading from "./Loading"
+import { FaHtml5, FaCss3Alt, FaJsSquare, FaNodeJs, FaReact} from 'react-icons/fa'
+import { SiNextdotjs, SiPostgresql, SiTailwindcss, SiThreedotjs } from 'react-icons/si'
 
 
 import { useRef, useEffect, Suspense } from "react"
@@ -39,7 +41,7 @@ const Left = tw.div`
   flex
   flex-col
   justify-center
-  items-end
+  items-start
   gap-5
   w-[60%]
 `;
@@ -67,6 +69,16 @@ const Right = tw.div`
 
 `;
 
+const Details = tw.p`
+  text-2xl
+  text-center
+  flex
+  flex-row
+  gap-4
+  pt-4
+`;
+
+
 
 export default function HeroBody() {
 
@@ -78,7 +90,7 @@ export default function HeroBody() {
       typeSpeed: 50,
       backSpeed: 50,
       loop: true,
-      startDelay: 500,
+      startDelay: 1000,
       backDelay: 1200,
       showCursor: true,
       cursorChar: "|",
@@ -109,7 +121,7 @@ export default function HeroBody() {
               </Sphere>
             </Suspense>
           </Canvas>
-          <Image src={headshot} alt='Lex Van-Nugent' priority={true} className="w-[60%] h-auto object-contain absolute top-0 bottom-0 left-0 right-0 m-auto animate-bounceSlow rounded-full"/>
+          <Image src={headshot} alt='Lex Van-Nugent' priority={true} className="w-[60%] object-contain absolute top-0 bottom-0 left-0 right-0 m-auto animate-bounceSlow rounded-full"/>
         </Right>
         <Left>
          <NameContainer>
@@ -128,6 +140,17 @@ export default function HeroBody() {
               <Link href='/portfolio' className="p-2 bg-secondary/80 rounded-lg shadow-md shadow-black text-xl">View Portfolio</Link>
             </div>
           </div>
+          <Details>
+            <FaHtml5 className="text-[#e54d26] bg-white rounded-xl" size={50}/>
+            <FaCss3Alt className="text-[#264de4] bg-white rounded-xl" size={50}/>
+            <FaJsSquare className="text-[#e6c72d] bg-white rounded-xl" size={50}/>
+            <FaNodeJs className="text-[#5fa04e] bg-white rounded-xl" size={50}/>
+            <FaReact className="text-[#0fccf7] bg-white rounded-xl" size={50}/>
+            <SiNextdotjs className="text-[#000000] bg-white rounded-xl" size={50}/>
+            <SiPostgresql className="text-[#31648c] bg-white rounded-xl" size={50}/>
+            <SiTailwindcss className="text-[#06adc9] bg-white rounded-xl" size={50}/>
+            <SiThreedotjs className="text-[#000000] bg-white rounded-xl" size={50}/>
+          </Details>
         </Left>
       </Container>
     </Section>
