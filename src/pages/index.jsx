@@ -3,19 +3,23 @@ import Image from 'next/image'
 import { Lato } from 'next/font/google'
 import dynamic from 'next/dynamic'
 
+import { GetServerSideProps } from 'next'
+
 // React imports
 import { useEffect, useState, useRef } from 'react'
 
 // ETC imports
 import tw from 'tailwind-styled-components'
 
-import AboutInfo from '../components/AboutInfo'
-import PortfolioInfo from '../components/PortfolioInfo'
-import Nav from '../components/Nav'
 // Lazy load components
-const Hero = dynamic(() => import('../components/Hero'))
+const Hero = dynamic(() => import('../components/Hero'));
+const AboutInfo = dynamic(() => import('../components/AboutInfo'));
+const PortfolioInfo = dynamic(() => import('../components/PortfolioInfo'));
+const ContactInfo = dynamic(() => import('../components/ContactInfo'));
+const Nav = dynamic(() => import('../components/Nav'));
 
-const lato = Lato({ subsets: ['latin'], weight: ['400'] })
+
+const lato = Lato({ subsets: ['latin'], weight: ['400'] });
 
 const MainContainer = tw.main`
   h-screen
@@ -29,30 +33,28 @@ const MainContainer = tw.main`
   flex-col
   justify-between
   items-center
-`
-
-
+  animate-fadeIn
+  bg-primary
+  bg-cubes
+`;
 
 export default function Home() {
-  const [loading, setLoading] = useState(false);
+
+
   const homeRef = useRef();
   const aboutRef = useRef();
   const portfolioRef = useRef();
   const contactRef = useRef();
 
-  useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    }, 1000);
-  }, []);
-
   return (
     <>
-      <MainContainer className={`${lato.className} ${loading  ? '' : 'animate-fadeIn bg-primary bg-cubes'}`}>
-        <Nav ref={homeRef}/>
+      <MainContainer className={`${lato.className}`} >
+        <div ref={homeRef} id='home'/>
+        <Nav />
         <Hero />
         <AboutInfo ref={aboutRef} />
         <PortfolioInfo ref={portfolioRef} />
+        <ContactInfo ref={contactRef} />
       </MainContainer>
     </>
   );
