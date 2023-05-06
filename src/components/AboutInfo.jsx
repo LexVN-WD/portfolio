@@ -14,20 +14,21 @@ import { SiNextdotjs, SiPostgresql, SiTailwindcss, SiThreedotjs } from 'react-ic
 const lato = Lato({ subsets: ['latin'], weight: ['400'] })
 
 const Section = tw.div`
-  h-screen
-  w-screen
+  min-h-screen
+  w-[80vw]
   scroll-snap-align-center
   flex
   flex-col
   items-center
   justify-between
   text-white
+  order-3
 `;
 
 const Container = tw.div`
   h-full
   scroll-snap-align-center
-  w-[90vw]
+  w-full
   flex
   flex-row
   justify-around
@@ -110,8 +111,7 @@ const StudioPics = tw.div`
 
 export default function AboutInfo() {
   return (
-    <Section className={`${lato.className}`}>
-      <Nav />
+    <Section className={`${lato.className}`} id='about'>
       <Container>
         <Top>
           <Titles>

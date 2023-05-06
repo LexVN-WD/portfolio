@@ -17,24 +17,26 @@ import { Canvas } from "@react-three/fiber"
 import { MeshDistortMaterial, OrbitControls, Sphere } from "@react-three/drei"
 
 const Section = tw.div`
-  h-screen
+  min-h-screen
+  w-[80vw]
   scroll-snap-align-center
   flex
   flex-col
   items-center
   justify-between
   text-white
-
+  order-2
+  pt-[15vh]
 `;
 
 const Container = tw.div`
   h-full
   scroll-snap-align-center
-  w-[80vw]
+  w-full
   flex
   justify-around
   align-start
-  gap-40
+  gap-48
 `;
 
 const Left = tw.div`
@@ -45,7 +47,7 @@ const Left = tw.div`
   items-start
   gap-2
   w-[45%]
-  h-[80vh]
+  h-full
 
 `;
 
@@ -83,7 +85,7 @@ const Details = tw.p`
 
 
 
-export default function HeroBody() {
+export default function HeroBody({ homeRef}) {
 
   const el = useRef(null);
 
@@ -105,8 +107,7 @@ export default function HeroBody() {
   }, []);
 
  return (
-    <Section>
-      <Nav />
+    <Section id='home'>
       <Container>
         <Right>
           <Canvas>

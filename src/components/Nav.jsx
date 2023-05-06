@@ -10,16 +10,20 @@ const Section = tw.div`
   flex
   justify-center
   items-center
-  w-[70vw]
+  w-[80vw]
   h-[15vh]
   text-white
+  static
+  order-1
+  absolute
+  top-0
+  z-20
 `;
 
 const Container = tw.div`
-  w-1400
-  py-4
   h-full
   w-full
+  py-4
 `;
 
 const Links = tw.div`
@@ -47,16 +51,16 @@ const List = tw.ul`
 
 export default function Nav() {
    return (
-    <Section className={`${lato.className}`}>
+    <Section className={`${lato.className}`} id='home'>
       <Container>
         <Links>
           <Logo>
             <Image src={logo} contain="true" alt='logo' className="h-full w-auto"/>
           </Logo>
           <List>
-            <Link href="/" className="hover:border-b-4 hover:border-black">Home</Link>
-            <Link href="/about" className="hover:border-b-4 hover:border-black">About</Link>
-            <Link href="/portfolio" className="hover:border-b-4 hover:border-black">Portfolio</Link>
+            <Link href="#home" className="hover:border-b-4 hover:border-black">Home</Link>
+            <Link href="#about" className="hover:border-b-4 hover:border-black">About</Link>
+            <Link href="#portfolio" className="hover:border-b-4 hover:border-black">Portfolio</Link>
             <Link href="/contact" className="hover:border-b-4 hover:border-black">Contact</Link>
           </List>
         </Links>

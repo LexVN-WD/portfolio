@@ -4,18 +4,22 @@ import { Lato } from 'next/font/google'
 import dynamic from 'next/dynamic'
 
 // React imports
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 
 // ETC imports
 import tw from 'tailwind-styled-components'
 
+import AboutInfo from '../components/AboutInfo'
+import PortfolioInfo from '../components/PortfolioInfo'
+import Nav from '../components/Nav'
 // Lazy load components
 const Hero = dynamic(() => import('../components/Hero'))
 
 const lato = Lato({ subsets: ['latin'], weight: ['400'] })
 
 const MainContainer = tw.main`
-  h-[100vh]
+  h-screen
+  w-screen
   scroll-snap-type-y-mandatory
   scroll-behavior-smooth
   overflow-y-auto
@@ -31,6 +35,10 @@ const MainContainer = tw.main`
 
 export default function Home() {
   const [loading, setLoading] = useState(false);
+  const homeRef = useRef();
+  const aboutRef = useRef();
+  const portfolioRef = useRef();
+  const contactRef = useRef();
 
   useEffect(() => {
     setTimeout(() => {
@@ -41,7 +49,10 @@ export default function Home() {
   return (
     <>
       <MainContainer className={`${lato.className} ${loading  ? '' : 'animate-fadeIn bg-primary bg-cubes'}`}>
+        <Nav ref={homeRef}/>
         <Hero />
+        <AboutInfo ref={aboutRef} />
+        <PortfolioInfo ref={portfolioRef} />
       </MainContainer>
     </>
   );

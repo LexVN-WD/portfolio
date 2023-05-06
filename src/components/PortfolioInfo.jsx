@@ -13,15 +13,16 @@ import Link from 'next/link';
 const lato = Lato({ subsets: ['latin'], weight: ['400'] })
 
 const Section = tw.div`
-  h-[100vh]
-  w-[100vw]
+  min-h-screen
+  w-[80vw]
   scroll-snap-align-center
   flex
   flex-col
   items-center
   justify-between
   text-white
-
+  order-4
+  pt-[15vh]
 `;
 
 const Container = tw.div`
@@ -126,17 +127,8 @@ const StudioPics = tw.div`
 
 export default function PortfolioInfo() {
   return (
-    <Section className={`${lato.className}`}>
-      <Nav />
+    <Section className={`${lato.className}`} id='portfolio'>
       <Container>
-        <Top>
-          <Title>
-            <Store target="_blank" href='https://lex-online-store.vercel.app'>Online-Store</Store>
-            <FaExternalLinkAlt />
-          </Title>
-          <Description>Simple E-Commerce store: Built with Nextjs and TailwindCSS</Description>
-          <Details> Placeholder Details: Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. </Details>
-        </Top>
          <Bottom>
           <Photos>
             <StudioPics>
@@ -145,6 +137,14 @@ export default function PortfolioInfo() {
             </StudioPics>
           </Photos>
         </Bottom>
+        <Top>
+          <Title>
+            <Store target="_blank" href='https://lex-online-store.vercel.app'>Online-Store</Store>
+            <FaExternalLinkAlt />
+          </Title>
+          <Description>Simple E-Commerce store: Built with Nextjs and TailwindCSS</Description>
+          <Details> Placeholder Details: Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. </Details>
+        </Top>
       </Container>
     </Section>
   );
