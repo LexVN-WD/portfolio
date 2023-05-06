@@ -132,8 +132,8 @@ export default function PortfolioInfo() {
          <Bottom>
           <Photos>
             <StudioPics>
-              <Image src={onlinestore} className='h-[45%] w-auto object-cover rounded-lg shadow-md hover:shadow-xl hover:shadow-black shadow-black'/>
-              <Image src={onlinestore2} className='h-[45%] w-auto object-cover rounded-lg shadow-md hover:shadow-xl hover:shadow-black shadow-black'/>
+              <Image src={onlinestore} alt='onlinestore' className='h-[45%] w-auto object-cover rounded-lg shadow-md hover:shadow-xl hover:shadow-black shadow-black'/>
+              <Image src={onlinestore2} alt='onlinestore2' className='h-[45%] w-auto object-cover rounded-lg shadow-md hover:shadow-xl hover:shadow-black shadow-black'/>
             </StudioPics>
           </Photos>
         </Bottom>

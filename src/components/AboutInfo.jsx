@@ -124,8 +124,8 @@ export default function AboutInfo() {
         <Bottom>
           <Photos>
             <StudioPics>
-              <Image src={studio} className='h-full rounded-full shadow-md hover:shadow-xl hover:shadow-black shadow-black'/>
-              <Image src={studio2} className='h-full object-cover rounded-full shadow-md hover:shadow-xl hover:shadow-black shadow-black'/>
+              <Image src={studio} alt='studio' className='h-full rounded-full shadow-md hover:shadow-xl hover:shadow-black shadow-black'/>
+              <Image src={studio2} alt='studio2' className='h-full object-cover rounded-full shadow-md hover:shadow-xl hover:shadow-black shadow-black'/>
             </StudioPics>
           </Photos>
         </Bottom>
