@@ -14,14 +14,14 @@ import { SiNextdotjs, SiPostgresql, SiTailwindcss, SiThreedotjs } from 'react-ic
 const lato = Lato({ subsets: ['latin'], weight: ['400'] })
 
 const Section = tw.div`
-  h-screen
-  w-screen
+  min-h-screen
+  w-[80vw]
   scroll-snap-align-center
   flex
   flex-col
   items-center
   justify-between
-
+  order-5
 `;
 
 const Container = tw.div`
@@ -110,8 +110,7 @@ const StudioPics = tw.div`
 
 export default function ContactInfo() {
   return (
-    <Section className={`${lato.className}`}>
-      <Nav />
+    <Section className={`${lato.className}`} id='contact'>
       <Container>
         <Top>
           <Titles>
