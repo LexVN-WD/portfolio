@@ -2,8 +2,6 @@ import tw from "tailwind-styled-components"
 import Image from "next/image"
 import Link from "next/link"
 import Typed from "typed.js"
-import Nav from "./Nav"
-import Loading from "./Loading"
 import { FaHtml5, FaCss3Alt, FaJsSquare, FaNodeJs, FaReact} from 'react-icons/fa'
 import { SiNextdotjs, SiPostgresql, SiTailwindcss, SiThreedotjs } from 'react-icons/si'
 
@@ -24,7 +22,6 @@ const Section = tw.div`
   flex-col
   items-center
   justify-between
-  text-white
   order-2
   pt-[15vh]
 `;
@@ -36,7 +33,7 @@ const Container = tw.div`
   flex
   justify-around
   align-start
-  gap-48
+  gap-52
 `;
 
 const Left = tw.div`
@@ -111,7 +108,7 @@ export default function HeroBody({ homeRef}) {
       <Container>
         <Right>
           <Canvas>
-            <Suspense fallback={<Loading/>}>
+            <Suspense fallback={null}>
               <OrbitControls enableZoom={false} enableRotate={false}/>
               <ambientLight intensity={1} />
               <directionalLight position={[4, 3, 2]} />

@@ -20,7 +20,6 @@ const Section = tw.div`
   flex-col
   items-center
   justify-between
-  text-white
   order-4
   pt-[15vh]
 `;

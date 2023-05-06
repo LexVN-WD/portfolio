@@ -1,17 +1,15 @@
 import { Lato } from 'next/font/google'
 import Image from 'next/image'
-
 import tw from 'tailwind-styled-components';
-import Nav from './Nav';
+import { useEffect, useRef } from 'react';
+
 
 //Media
 import studio from 'public/static/studio.jpg'
 import studio2 from 'public/static/studio2.jpg'
-import fishing from 'public/static/fishing.jpg'
-import { FaHtml5, FaCss3Alt, FaJsSquare, FaNodeJs, FaReact} from 'react-icons/fa'
-import { SiNextdotjs, SiPostgresql, SiTailwindcss, SiThreedotjs } from 'react-icons/si'
 
 const lato = Lato({ subsets: ['latin'], weight: ['400'] })
+
 
 const Section = tw.div`
   min-h-screen
@@ -21,7 +19,6 @@ const Section = tw.div`
   flex-col
   items-center
   justify-between
-  text-white
   order-3
 `;
 
@@ -44,6 +41,7 @@ const Top = tw.div`
   items-center
   w-[45%]
   h-[60vh]
+  about-1
 `;
 
 const Bottom = tw.div`
@@ -54,6 +52,7 @@ const Bottom = tw.div`
   items-center
   w-[50%]
   h-[60vh]
+  about-2
 `;
 
 const Title = tw.h1`
@@ -110,6 +109,7 @@ const StudioPics = tw.div`
 
 
 export default function AboutInfo() {
+
   return (
     <Section className={`${lato.className}`} id='about'>
       <Container>

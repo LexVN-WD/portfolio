@@ -12,7 +12,6 @@ const Section = tw.div`
   items-center
   w-[80vw]
   h-[15vh]
-  text-white
   absolute
   order-1
   top-0
