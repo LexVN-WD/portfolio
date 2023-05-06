@@ -13,11 +13,10 @@ const Section = tw.div`
   w-[80vw]
   h-[15vh]
   text-white
-  static
-  order-1
   absolute
+  order-1
   top-0
-  z-20
+  z-30
 `;
 
 const Container = tw.div`
@@ -50,8 +49,10 @@ const List = tw.ul`
 
 
 export default function Nav() {
+
+
    return (
-    <Section className={`${lato.className}`} id='home'>
+    <Section>
       <Container>
         <Links>
           <Logo>
@@ -61,10 +62,10 @@ export default function Nav() {
             <Link href="#home" className="hover:border-b-4 hover:border-black">Home</Link>
             <Link href="#about" className="hover:border-b-4 hover:border-black">About</Link>
             <Link href="#portfolio" className="hover:border-b-4 hover:border-black">Portfolio</Link>
-            <Link href="/contact" className="hover:border-b-4 hover:border-black">Contact</Link>
+            <Link href="#contact" className="hover:border-b-4 hover:border-black">Contact</Link>
           </List>
         </Links>
       </Container>
     </Section>
   );
-}
+};
