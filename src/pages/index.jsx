@@ -1,3 +1,5 @@
+'use client';
+
 // NextJs imports
 import { Lato } from 'next/font/google'
 import dynamic from 'next/dynamic'
