@@ -2,13 +2,9 @@
 
 import { useState } from 'react';
 import { motion } from "framer-motion"
+import { MotionDiv, MotionSection } from '../pages/index';
 import tw from 'tailwind-styled-components';
 import { GoogleMap, LoadScript } from '@react-google-maps/api';
-
-export const MotionDiv = motion.div;
-
-export const MotionSection = motion.section;
-
 
 const Container = tw.div`
 scroll-smooth

@@ -9,6 +9,7 @@ import { useRef } from 'react'
 
 // ETC imports
 import tw from 'tailwind-styled-components'
+import { motion } from "framer-motion"
 
 // Lazy load components
 const Nav = dynamic(() => import('../components/Nav'));
@@ -18,6 +19,10 @@ const Portfolio = dynamic(() => import('../components/Portfolio'));
 const Contact = dynamic(() => import('../components/Contact'));
 
 const lato = Lato({ subsets: ['latin'], weight: ['400'] });
+
+export const MotionDiv = motion.div;
+
+export const MotionSection = motion.section;
 
 const MainContainer = tw.main`
   scroll-smooth
