@@ -1,9 +1,6 @@
 'use client';
-
 import Image from 'next/image'
 import tw from 'tailwind-styled-components';
-import { motion, useScroll, useTransform, Variants } from "framer-motion"
-import { useRef } from 'react';
 
 //Media
 import studio from 'public/static/studio.jpg'

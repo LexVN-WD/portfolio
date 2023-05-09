@@ -81,7 +81,7 @@ const Details = tw.p`
 
 
 
-export default function Hero({ homeRef}) {
+export default function Hero() {
 
   const el = useRef(null);
 

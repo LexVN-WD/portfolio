@@ -39,12 +39,6 @@ export default function Home() {
   const portfolioRef = useRef();
   const contactRef = useRef();
 
-  const pageRef = useRef();
-
-  const { scrollYProgress } = useScroll({
-    target: pageRef,
-  })
-
   return (
     <>
 

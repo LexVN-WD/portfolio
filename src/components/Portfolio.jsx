@@ -127,6 +127,8 @@ const StudioPics = tw.div`
 
 
 export default function PortfolioInfo() {
+
+  
   return (
     <Section className={`${lato.className}`} id='portfolio'>
       <Container>
