@@ -21,7 +21,6 @@ const Section = tw.div`
 const Container = tw.div`
   h-full
   w-full
-  py-4
 `;
 
 const Links = tw.div`
@@ -34,15 +33,14 @@ const Links = tw.div`
 `;
 
 const Logo = tw.div`
-  h-[10vh]
-  p-3
+  w-[30%]
+
 `;
 
 const List = tw.ul`
   flex
   text-2xl
   gap-10
-  list-none
   font-semibold
 `;
 

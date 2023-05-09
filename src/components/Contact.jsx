@@ -1,126 +1,170 @@
-import { Lato } from 'next/font/google'
-import Image from 'next/image'
-
+import { useRef, useState, useCallback } from 'react';
+import { motion } from 'framer-motion';
 import tw from 'tailwind-styled-components';
-import Nav from './Nav';
+import { GoogleMap, useJsApiLoader, LoadScript } from '@react-google-maps/api';
 
-//Media
-import studio from 'public/static/studio.jpg'
-import studio2 from 'public/static/studio2.jpg'
-import fishing from 'public/static/fishing.jpg'
-import { FaHtml5, FaCss3Alt, FaJsSquare, FaNodeJs, FaReact} from 'react-icons/fa'
-import { SiNextdotjs, SiPostgresql, SiTailwindcss, SiThreedotjs } from 'react-icons/si'
-
-const lato = Lato({ subsets: ['latin'], weight: ['400'] })
-
-const Section = tw.div`
-  min-h-screen
-  w-[80vw]
-  scroll-snap-align-center
-  flex
-  flex-col
-  items-center
-  justify-between
-  order-5
-`;
 
 const Container = tw.div`
-  h-full
-  scroll-snap-align-center
-  w-[90vw]
-  flex
-  flex-row
-  justify-around
-  items-center
-  gap-40
+scroll-smooth
+min-h-[85vh]
+w-[80vw]
+flex
+flex-row
+justify-around
+items-center
+gap-40
+order-5
+mt-[15vh]
 `;
 
-const Top = tw.div`
-  flex-2
-  flex
-  flex-col
-  justify-around
-  items-center
-  w-[45%]
-  h-[60vh]
+const LeftSection = tw.div`
+h-full
+w-1/2
+flex
+flex-col
+items-center
 `;
 
-const Bottom = tw.div`
-  flex-2
-  flex
-  flex-col
-  justify-around
-  items-center
-  w-[50%]
-  h-[60vh]
+const RightSection = tw.div`
+h-full
+w-1/2
+flex
+flex-col
+items-center
+justify-center
 `;
 
-const Title = tw.h1`
-  text-6xl 
-  text-center
-  w-full
-`;
+const containerStyle = {
+  width: '100%',
+  height: '80%',
+};
 
-const Titles = tw.p`
-  text-3xl
-  text-center
-  w-full
-`;
+const center = {
+  lat: 51.101,
+  lng: -114.157,
+};
 
-const Skills = tw.p`
-  text-3xl
-  text-center
-  w-full
-`;
+export default function Contact() {
 
-const Description = tw.p`
-  text-3xl
-  text-center
-  w-full
-`;
+  const [map, setMap] = useState(null);
 
-const Details = tw.p`
-  text-2xl
-  text-center
-  w-full
-  flex
-  flex-row
-`;
+  const contactRef = useRef(null);
+  const leftRef = useRef(null);
 
-const Photos = tw.div`
-  flex
-  flex-row
-  justify-center
-  items-center
-  gap-5
-  w-full
-`;
+  const contactVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0 },
+  };
 
-const StudioPics = tw.div`
-  flex
-  flex-row
-  justify-center
-  items-center
-  gap-5
-  w-full
-  object-contain
-  h-[50vh]
-`;
+  const leftVariants = {
+    hidden: { opacity: 0, x: -50 },
+    visible: { opacity: 1, x: 0 },
+  };
 
 
-export default function ContactInfo() {
+  const apiKey = process.env.REACT_APP_GOOGLE_API_KEY;
+
+
+
+
   return (
-    <Section className={`${lato.className}`} id='contact'>
-      <Container>
-        <Top>
-          <Titles>
-            Contact Placeholder
-          </Titles>
-          <Details>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt ab doloremque numquam vero minus quos est dolorum odit itaque officiis sint magni enim, consequatur, fuga accusamus voluptatem quaerat. Natus, possimus.
-          </Details>
-        </Top>
-      </Container>
-    </Section>
+    <Container id="contact">
+      <LeftSection>
+        <motion.div
+          ref={leftRef}
+          className="w-full h-full flex flex-col items-center justify-center"
+          initial="hidden"
+          whileInView="visible"
+          variants={leftVariants}
+          transition={{ duration: 0.6}}
+        >
+          <div className="my-8 ">
+            <a href="https://github.com/LexVN-WD" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <span className="mx-4">|</span>
+            <a href="https://www.linkedin.com/in/lexvannugent/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </div>
+          <LoadScript
+              googleMapsApiKey={apiKey}
+            >
+              <GoogleMap
+                id='google-map-script'
+                mapContainerStyle={containerStyle}
+                center={center}
+                zoom={12}
+                className="w-full h-[80%]"
+              />
+            </LoadScript>
+        </motion.div>
+      </LeftSection>
+      <RightSection>
+        <motion.section
+          ref={contactRef}
+          className="w-full flex flex-col items-center justify-center"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.2 }}
+          variants={contactVariants}
+          transition={{ duration: 0.6}}
+        >
+          <h2 className="text-3xl font-bold mb-8">Contact</h2>
+          <form className="w-full max-w-lg">
+            <div className="flex flex-wrap -mx-3 mb-6">
+              <div className="w-full px-3 mb-6 md:mb-0">
+                <label
+                  className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                  htmlFor="grid-name"
+                >
+                  Name
+                </label>
+                <input
+                  className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                  id="grid-name"
+                  type="text"
+                  placeholder="Name*"
+                />
+              </div>
+              <div className="w-full px-3">
+                <label
+                  className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                  htmlFor="grid-email"
+                >
+                  Email
+                </label>
+                <input
+                  className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                  id="grid-email"
+                  type="email"
+                  placeholder="Email*"
+                />
+              </div>
+            </div>
+            <div className="flex flex-wrap -mx-3 mb-6">
+              <div className="w-full px-3">
+                <label
+                  className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                  htmlFor="grid-message"
+                >
+                  Message
+                </label>
+                <textarea
+                  className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                  id="grid-message"
+                  placeholder="Enter your message here*"
+                  rows="6"
+                ></textarea>
+              </div>
+            </div>
+            <div className="flex justify-center">
+              <button
+                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                type="button"
+              >
+                Send
+              </button>
+            </div>
+          </form>
+        </motion.section>
+      </RightSection>
+    </Container>
   );
 }

@@ -9,16 +9,20 @@ import { useEffect, useState, useRef } from 'react'
 // ETC imports
 import tw from 'tailwind-styled-components'
 
+import { motion, useScroll, useTransform } from "framer-motion"
+
 // Lazy load components
+const Nav = dynamic(() => import('../components/Nav'));
 const Hero = dynamic(() => import('../components/Hero'));
 const About = dynamic(() => import('../components/About'));
 const Portfolio = dynamic(() => import('../components/Portfolio'));
 const Contact = dynamic(() => import('../components/Contact'));
-const Nav = dynamic(() => import('../components/Nav'));
 
 const lato = Lato({ subsets: ['latin'], weight: ['400'] });
 
 const MainContainer = tw.main`
+  scroll-smooth
+  snap-y
   h-screen
   w-screen
   flex
@@ -36,16 +40,26 @@ export default function Home() {
   const portfolioRef = useRef();
   const contactRef = useRef();
 
+  const pageRef = useRef();
+
+  const { scrollYProgress } = useScroll({
+    target: pageRef,
+  })
+
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0])
+  
+
   return (
     <>
-      <MainContainer className={`scrollbar ${lato.className}`} >
-        <div ref={homeRef} id='home'/>
-        <Nav />
-        <Hero />
-        <About ref={aboutRef} />
-        <Portfolio ref={portfolioRef} />
-        <Contact ref={contactRef} />
-      </MainContainer>
+
+        <MainContainer className={`${lato.className}`} >
+          <div ref={homeRef} id='home'/>
+          <Nav />
+          <Hero />
+          <About ref={aboutRef} />
+          <Portfolio ref={portfolioRef} />
+          <Contact ref={contactRef} />
+        </MainContainer>
     </>
   );
 }
