@@ -109,7 +109,7 @@ export default function Hero({ homeRef}) {
               <OrbitControls enableZoom={false} enableRotate={false}/>
               <ambientLight intensity={1} />
               <directionalLight position={[4, 3, 2]} />
-              <Sphere args={[1, 100, 200]} scale={2.3}>
+              <Sphere args={[1, 100, 200]} scale={2.2}>
                 <MeshDistortMaterial
                   color="#3d1c56"
                   attach="material"

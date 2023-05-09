@@ -62,11 +62,6 @@ export default function Contact() {
   };
 
 
-  const apiKey = process.env.REACT_APP_GOOGLE_API_KEY;
-
-
-
-
   return (
     <Container id="contact">
       <LeftSection>
@@ -84,7 +79,7 @@ export default function Contact() {
             <a href="https://www.linkedin.com/in/lexvannugent/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
           </div>
           <LoadScript
-              googleMapsApiKey={apiKey}
+              googleMapsApiKey="AIzaSyAu1bRoog7GvCXdJXjoFIr1bxxo361OxQA"
             >
               <GoogleMap
                 id='google-map-script'
