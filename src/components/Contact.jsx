@@ -50,8 +50,8 @@ export default function Contact() {
 
   const [map, setMap] = useState(null);
 
-  const contactRef = useRef(null);
-  const leftRef = useRef(null);
+  const contactRef = useRef();
+  const leftRef = useRef();
 
   const contactVariants = {
     hidden: { opacity: 0, y: 50 },
@@ -67,7 +67,6 @@ export default function Contact() {
 
 
   return (
-    <AnimatePresence>
       <Container id="contact">
         <LeftSection>
           <motion.div
@@ -166,6 +165,5 @@ export default function Contact() {
           </motion.section>
         </RightSection>
       </Container>
-    </AnimatePresence>
   );
 }
