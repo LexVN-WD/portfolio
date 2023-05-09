@@ -1,7 +1,7 @@
-import { useRef, useState, useCallback } from 'react';
+import { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import tw from 'tailwind-styled-components';
-import { GoogleMap, useJsApiLoader, LoadScript } from '@react-google-maps/api';
+import { GoogleMap, LoadScript } from '@react-google-maps/api';
 
 
 const Container = tw.div`
@@ -61,6 +61,8 @@ export default function Contact() {
     visible: { opacity: 1, x: 0 },
   };
 
+  const apiKey = process.env.NEXT_PUBLIC_GOOGLE_API_KEY;
+
 
   return (
     <Container id="contact">
@@ -79,7 +81,7 @@ export default function Contact() {
             <a href="https://www.linkedin.com/in/lexvannugent/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
           </div>
           <LoadScript
-              googleMapsApiKey="AIzaSyAu1bRoog7GvCXdJXjoFIr1bxxo361OxQA"
+              googleMapsApiKey={apiKey}
             >
               <GoogleMap
                 id='google-map-script'

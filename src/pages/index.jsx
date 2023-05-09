@@ -1,10 +1,9 @@
 // NextJs imports
-import Image from 'next/image'
 import { Lato } from 'next/font/google'
 import dynamic from 'next/dynamic'
 
 // React imports
-import { useEffect, useState, useRef } from 'react'
+import { useRef } from 'react'
 
 // ETC imports
 import tw from 'tailwind-styled-components'
@@ -45,9 +44,6 @@ export default function Home() {
   const { scrollYProgress } = useScroll({
     target: pageRef,
   })
-
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0])
-  
 
   return (
     <>

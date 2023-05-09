@@ -78,13 +78,6 @@ const StudioPics = tw.div`
 
 
 export default function About() {
-  const { scrollYProgress } = useScroll();
-
-  const aboutRef = useRef(null);
-
-  const aboutVariants = {
-
-  }
 
   return (
       <Container id="about">
