@@ -1,3 +1,5 @@
+'use client';
+
 import tw from "tailwind-styled-components"
 import Image from "next/image"
 import Link from "next/link"

@@ -1,3 +1,5 @@
+'use client';
+
 import Image from 'next/image'
 import tw from 'tailwind-styled-components';
 import { motion, useScroll, useTransform, Variants } from "framer-motion"
