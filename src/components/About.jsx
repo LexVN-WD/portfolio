@@ -100,27 +100,27 @@ const StudioPics = tw.div`
 export default function About() {
 
   const titleVariants1 = {
-    hidden: { opacity: 0, x: 50 },
+    hidden: { opacity: 0, x: 75 },
     visible: { opacity: 1, x: 0 },
   };
 
   const titleVariants2 = {
-    hidden: { opacity: 0, x: -50 },
+    hidden: { opacity: 0, x: -75 },
     visible: { opacity: 1, x: 0 },
   };
 
   const titleVariants3 = {
-    hidden: { opacity: 0, x: -50 },
+    hidden: { opacity: 0, x: 75 },
     visible: { opacity: 1, x: 0 },
   };
 
   const titleVariants4 = {
-    hidden: { opacity: 0, x: -50 },
+    hidden: { opacity: 0, x: -75 },
     visible: { opacity: 1, x: 0 },
   };
 
   const detailVariants = {
-    hidden: { opacity: 0, y: 50 },
+    hidden: { opacity: 0, y: 75 },
     visible: { opacity: 1, y: 0 },
   };
 
@@ -150,7 +150,7 @@ export default function About() {
                 initial="hidden"
                 whileInView="visible"
                 variants={titleVariants1}
-                transition={{ duration: 0.4}}
+                transition={{ duration: 0.5}}
               
               >
                 Junior Web Developer
@@ -174,7 +174,7 @@ export default function About() {
                 initial="hidden"
                 whileInView="visible"
                 variants={titleVariants3}
-                transition={{ duration: 0.6}}
+                transition={{ duration: 0.5}}
                 
               >
                 BA Sociology/Psychology 
@@ -186,7 +186,7 @@ export default function About() {
                 initial="hidden"
                 whileInView="visible"
                 variants={titleVariants4}
-                transition={{ duration: 0.7}}
+                transition={{ duration: 0.5}}
                 
               >
                 Lighthouse Labs Alumni 
