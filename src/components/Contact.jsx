@@ -4,6 +4,9 @@ import { useState } from 'react';
 import { MotionDiv, MotionSection } from '../pages/index';
 import tw from 'tailwind-styled-components';
 import { GoogleMap, LoadScript } from '@react-google-maps/api';
+import Link from 'next/link';
+import { FaGithubSquare } from 'react-icons/fa';
+import { BsLinkedin } from 'react-icons/bs';
 
 const Container = tw.div`
 scroll-smooth
@@ -60,7 +63,7 @@ export default function Contact() {
     visible: { opacity: 1, x: 0 },
   };
 
-  const apiKey = process.env.NEXT_PUBLIC_GOOGLE_API_KEY;
+  const apiKey = "AIzaSyAu1bRoog7GvCXdJXjoFIr1bxxo361OxQA"
 
 
   return (
@@ -73,13 +76,19 @@ export default function Contact() {
             variants={leftVariants}
             transition={{ duration: 0.6}}
           >
-            <div className="my-8 ">
-              <a href="https://github.com/LexVN-WD" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <div className="my-8 flex flex-row text-5xl">
+              <div className='flex flex-row items-center gap-2'>
+                <Link href="https://github.com/LexVN-WD" target="_blank">GitHub</Link>
+                <FaGithubSquare/>
+              </div>
               <span className="mx-4">|</span>
-              <a href="https://www.linkedin.com/in/lexvannugent/" target="_blank">LinkedIn</a>
+              <div className='flex flex-row items-center gap-2'>
+                <Link href="https://www.linkedin.com/in/lexvannugent/" target="_blank">LinkedIn</Link>
+                <BsLinkedin />
+              </div>
             </div>
             <LoadScript
-                googleMapsApiKey="AIzaSyAu1bRoog7GvCXdJXjoFIr1bxxo361OxQA"
+                googleMapsApiKey={apiKey}
               >
                 <GoogleMap
                   id='google-map-script'
