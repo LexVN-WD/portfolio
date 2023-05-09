@@ -1,9 +1,13 @@
 'use client';
 
-import { useRef, useState } from 'react';
-import { motion, AnimatePresence } from "framer-motion"
+import { useState } from 'react';
+import { motion } from "framer-motion"
 import tw from 'tailwind-styled-components';
 import { GoogleMap, LoadScript } from '@react-google-maps/api';
+
+export const MotionDiv = motion.div;
+
+export const MotionSection = motion.section;
 
 
 const Container = tw.div`
@@ -66,7 +70,7 @@ export default function Contact() {
   return (
       <Container id="contact">
         <LeftSection>
-          <motion.div
+          <MotionDiv
             className="w-full h-full flex flex-col items-center justify-center"
             initial="hidden"
             whileInView="visible"
@@ -76,7 +80,7 @@ export default function Contact() {
             <div className="my-8 ">
               <a href="https://github.com/LexVN-WD" target="_blank" rel="noopener noreferrer">GitHub</a>
               <span className="mx-4">|</span>
-              <a href="https://www.linkedin.com/in/lexvannugent/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <a href="https://www.linkedin.com/in/lexvannugent/" target="_blank">LinkedIn</a>
             </div>
             <LoadScript
                 googleMapsApiKey={apiKey}
@@ -89,10 +93,10 @@ export default function Contact() {
                   className="w-full h-[80%]"
                 />
               </LoadScript>
-          </motion.div>
+          </MotionDiv>
         </LeftSection>
         <RightSection>
-          <motion.section
+          <MotionSection
             className="w-full flex flex-col items-center justify-center"
             initial="hidden"
             whileInView="visible"
@@ -157,7 +161,7 @@ export default function Contact() {
                 </button>
               </div>
             </form>
-          </motion.section>
+          </MotionSection>
         </RightSection>
       </Container>
   );

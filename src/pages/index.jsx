@@ -10,8 +10,6 @@ import { useRef } from 'react'
 // ETC imports
 import tw from 'tailwind-styled-components'
 
-import { motion, useScroll, useTransform } from "framer-motion"
-
 // Lazy load components
 const Nav = dynamic(() => import('../components/Nav'));
 const Hero = dynamic(() => import('../components/Hero'));

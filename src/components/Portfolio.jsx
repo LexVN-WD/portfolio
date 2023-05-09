@@ -2,17 +2,12 @@
 
 import { Lato } from 'next/font/google'
 import Image from 'next/image'
-
 import tw from 'tailwind-styled-components';
-import Nav from './Nav';
 
 //Media
 import onlinestore from 'public/static/onlinestore.png'
 import onlinestore2 from 'public/static/onlinestore2.png'
 import { FaExternalLinkAlt } from 'react-icons/fa'
-import Link from 'next/link';
-
-const lato = Lato({ subsets: ['latin'], weight: ['400'] })
 
 const Section = tw.div`
   scroll-smooth
@@ -130,7 +125,7 @@ export default function PortfolioInfo() {
 
   
   return (
-    <Section className={`${lato.className}`} id='portfolio'>
+    <Section id='portfolio'>
       <Container>
          <Bottom>
           <Photos>

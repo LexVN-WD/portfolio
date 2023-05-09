@@ -4,9 +4,6 @@ import Image from "next/image"
 import logo from "/public/static/logo.png"
 import Link from "next/link"
 import tw from "tailwind-styled-components"
-import { Lato } from 'next/font/google'
-
-const lato = Lato({ subsets: ['latin'], weight: ['400'] })
 
 const Section = tw.div`
   flex
