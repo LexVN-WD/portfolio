@@ -10,7 +10,6 @@ import { BsLinkedin } from 'react-icons/bs';
 
 const Container = tw.div`
 scroll-smooth
-snap-end
 min-h-[85vh]
 w-[80vw]
 flex

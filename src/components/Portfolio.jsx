@@ -11,25 +11,28 @@ import { FaExternalLinkAlt } from 'react-icons/fa'
 
 const Section = tw.div`
   scroll-smooth
-  snap-end
-  min-h-[85vh]
+  min-h-screen
   w-[80vw]
   flex
   flex-col
   items-center
   justify-between
   order-4
-  mt-[15vh]
 `;
 
 const Container = tw.div`
-  h-full
+  h-[85vh]
   w-full
   flex
   flex-row
   justify-around
   items-center
   gap-30
+`;
+
+const Spacer = tw.div`
+  h-[15vh]
+  w-full
 `;
 
 const Top = tw.div`
@@ -126,6 +129,7 @@ export default function PortfolioInfo() {
   
   return (
     <Section id='portfolio'>
+      <Spacer />
       <Container>
          <Bottom>
           <Photos>

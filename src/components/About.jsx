@@ -18,17 +18,30 @@ import studio5 from 'public/static/studio5.jpg'
 
 const Container = tw.div`
   scroll-smooth
-  snap-end
-  min-h-[85vh]
+  min-h-screen
   w-[80vw]
-  mt-[15vh]
+  flex
+  flex-col
+  justify-between
+  items-center
+  order-3
+`;
+
+const AboutContainer = tw.div`
+  w-full
+  h-[85vh]
   flex
   flex-row
   justify-between
   items-center
-  order-3
   gap-20
 `;
+
+const Spacer = tw.div`
+  h-[15vh]
+  w-full
+`;
+
 
 const Left = tw.div`
   flex
@@ -36,7 +49,7 @@ const Left = tw.div`
   justify-center
   items-center
   w-[50%]
-  h-full
+  h-[85vh]
 
 `;
 
@@ -46,7 +59,7 @@ const Right = tw.div`
   justify-around
   items-center
   w-[50%]
-  h-full
+  h-[85vh]
 `;
 
 
@@ -142,116 +155,118 @@ export default function About() {
 
   return (
       <Container id="about">
-        
-          <Left>
-            <Titles>
-              <MotionDiv 
-                className='flex flex-row justify-between w-full'
-                initial="hidden"
-                whileInView="visible"
-                variants={titleVariants1}
-                transition={{ duration: 0.5}}
-              
-              >
-                Junior Web Developer
-                <BsTerminalFill/>
-              </MotionDiv>
-              
-              <MotionDiv 
-                className='flex flex-row justify-between w-full'
-                initial="hidden"
-                whileInView="visible"
-                variants={titleVariants2}
-                transition={{ duration: 0.5}}
-                
-              >
-                Professional Voice Actor 
-                <IoIosMicrophone/>
-              </MotionDiv>
-              
-              <MotionDiv 
-                className='flex flex-row justify-between w-full'
-                initial="hidden"
-                whileInView="visible"
-                variants={titleVariants3}
-                transition={{ duration: 0.5}}
-                
-              >
-                BA Sociology/Psychology 
-                <FaGraduationCap />
-              </MotionDiv>
-              
-              <MotionDiv 
-                className='flex flex-row justify-between w-full'
-                initial="hidden"
-                whileInView="visible"
-                variants={titleVariants4}
-                transition={{ duration: 0.5}}
-                
-              >
-                Lighthouse Labs Alumni 
-                <SiLighthouse />
-              </MotionDiv>
-            </Titles>
-            <Details>
-              <MotionDiv 
-                className='text-3xl'
-                initial="hidden"
-                whileInView="visible"
-                variants={detailVariants}
-                transition={{ duration: 0.8}}
-              >Passionate, driven, and always looking to learn</MotionDiv>
-              
-              <MotionDiv
-                initial="hidden"
-                whileInView="visible"
-                variants={detailVariants}
-                transition={{ duration: 0.8}}
-                >As a Web Developer, my goal is to continually add to my knowledge base and harness it to create products that are not only modern, but have the user-experience the focal point.</MotionDiv> 
-             
-              <MotionDiv
-                initial="hidden"
-                whileInView="visible"
-                variants={detailVariants}
-                transition={{ duration: 0.8}}
-                >My background in entertainment and social sciences provides me with a unique perspective on how to approach problems and find solutions.</MotionDiv>
-            </Details>
-          </Left>
-          <Right>
-            <Photos>
-              <StudioPics>
-                <MotionDiv className='h-[50%] w-full flex flex-row'>
-                  <MotionDiv
-                    className='h-full w-[50%]'
-                    initial="hidden"
-                    whileInView="visible"
-                    variants={picVariants1}
-                    transition={{ duration: 0.8}}
-                  >
-                    <Image src={studio5} alt='studio2' className='h-full w-full object-cover rounded-sm shadow-md hover:shadow-xl hover:shadow-black shadow-black'/>
-                  </MotionDiv>
-                  <MotionDiv
-                    className='h-full w-[50%]'
-                    initial="hidden"
-                    whileInView="visible"
-                    variants={picVariants2}
-                    transition={{ duration: 0.9}}
-                  >
-                    <Image src={studio3} alt='studio2' className='h-full w-full object-cover rounded-sm shadow-md hover:shadow-xl hover:shadow-black shadow-black'/>
-                  </MotionDiv>
-                </MotionDiv>
-                <MotionDiv 
-                  className='h-[50%] w-full flex justify-center'
+          <Spacer/>
+          <AboutContainer>
+            <Left>
+              <Titles>
+                <MotionDiv
+                  className='flex flex-row justify-between w-full'
                   initial="hidden"
                   whileInView="visible"
-                  variants={picVariants3}
-                  transition={{ duration: 1.0}}
+                  variants={titleVariants1}
+                  transition={{ duration: 0.5}}
+            
                 >
-                  <Image src={studio2} alt='studio2' className='h-full w-[50%] object-cover rounded-sm shadow-md hover:shadow-xl hover:shadow-black shadow-black'/>
+                  Junior Web Developer
+                  <BsTerminalFill/>
                 </MotionDiv>
-              </StudioPics>
-            </Photos>
-          </Right>
+            
+                <MotionDiv
+                  className='flex flex-row justify-between w-full'
+                  initial="hidden"
+                  whileInView="visible"
+                  variants={titleVariants2}
+                  transition={{ duration: 0.5}}
+            
+                >
+                  Professional Voice Actor
+                  <IoIosMicrophone/>
+                </MotionDiv>
+            
+                <MotionDiv
+                  className='flex flex-row justify-between w-full'
+                  initial="hidden"
+                  whileInView="visible"
+                  variants={titleVariants3}
+                  transition={{ duration: 0.5}}
+            
+                >
+                  BA Sociology/Psychology
+                  <FaGraduationCap />
+                </MotionDiv>
+            
+                <MotionDiv
+                  className='flex flex-row justify-between w-full'
+                  initial="hidden"
+                  whileInView="visible"
+                  variants={titleVariants4}
+                  transition={{ duration: 0.5}}
+            
+                >
+                  Lighthouse Labs Alumni
+                  <SiLighthouse />
+                </MotionDiv>
+              </Titles>
+              <Details>
+                <MotionDiv
+                  className='text-3xl'
+                  initial="hidden"
+                  whileInView="visible"
+                  variants={detailVariants}
+                  transition={{ duration: 0.8}}
+                >Passionate, driven, and always looking to learn</MotionDiv>
+            
+                <MotionDiv
+                  initial="hidden"
+                  whileInView="visible"
+                  variants={detailVariants}
+                  transition={{ duration: 0.8}}
+                  >As a Web Developer, my goal is to continually add to my knowledge base and harness it to create products that are not only modern, but have the user-experience the focal point.</MotionDiv>
+            
+                <MotionDiv
+                  initial="hidden"
+                  whileInView="visible"
+                  variants={detailVariants}
+                  transition={{ duration: 0.8}}
+                  >My background in entertainment and social sciences provides me with a unique perspective on how to approach problems and find solutions.</MotionDiv>
+              </Details>
+            </Left>
+            <Right>
+              <Photos>
+                <StudioPics>
+                  <MotionDiv className='h-[50%] w-full flex flex-row'>
+                    <MotionDiv
+                      className='h-full w-[50%]'
+                      initial="hidden"
+                      whileInView="visible"
+                      variants={picVariants1}
+                      transition={{ duration: 0.8}}
+                    >
+                      <Image src={studio5} alt='studio2' className='h-full w-full object-cover rounded-sm shadow-md hover:shadow-xl hover:shadow-black shadow-black'/>
+                    </MotionDiv>
+                    <MotionDiv
+                      className='h-full w-[50%]'
+                      initial="hidden"
+                      whileInView="visible"
+                      variants={picVariants2}
+                      transition={{ duration: 0.9}}
+                    >
+                      <Image src={studio3} alt='studio2' className='h-full w-full object-cover rounded-sm shadow-md hover:shadow-xl hover:shadow-black shadow-black'/>
+                    </MotionDiv>
+                  </MotionDiv>
+                  <MotionDiv
+                    className='h-[50%] w-full flex justify-center'
+                    initial="hidden"
+                    whileInView="visible"
+                    variants={picVariants3}
+                    transition={{ duration: 1.0}}
+                  >
+                    <Image src={studio2} alt='studio2' className='h-full w-[50%] object-cover rounded-sm shadow-md hover:shadow-xl hover:shadow-black shadow-black'/>
+                  </MotionDiv>
+                </StudioPics>
+              </Photos>
+            </Right>
+          </AboutContainer>
         </Container>
   );
 }
