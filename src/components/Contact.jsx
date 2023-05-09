@@ -50,8 +50,8 @@ export default function Contact() {
 
   const [map, setMap] = useState(null);
 
-  const contactRef = useRef();
-  const leftRef = useRef();
+  // const contactRef = useRef();
+  // const leftRef = useRef();
 
   const contactVariants = {
     hidden: { opacity: 0, y: 50 },
@@ -71,7 +71,7 @@ export default function Contact() {
       <Container id="contact">
         <LeftSection>
           <motion.div
-            ref={leftRef}
+            // ref={leftRef}
             className="w-full h-full flex flex-col items-center justify-center"
             initial="hidden"
             whileInView="visible"
@@ -98,7 +98,7 @@ export default function Contact() {
         </LeftSection>
         <RightSection>
           <motion.section
-            ref={contactRef}
+            // ref={contactRef}
             className="w-full flex flex-col items-center justify-center"
             initial="hidden"
             whileInView="visible"
