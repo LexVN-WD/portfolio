@@ -125,17 +125,17 @@ export default function About() {
   };
 
   const picVariants1 = {
-    hidden: { opacity: 0, y: -50 },
+    hidden: { opacity: 0, y: -100 },
     visible: { opacity: 1, y: 0 },
   };
 
   const picVariants2 = {
-    hidden: { opacity: 0, y: 50 },
+    hidden: { opacity: 0, y: 100 },
     visible: { opacity: 1, y: 0 },
   };
 
   const picVariants3 = {
-    hidden: { opacity: 0, x: -50 },
+    hidden: { opacity: 0, x: -100 },
     visible: { opacity: 1, x: 0 },
   };
   
@@ -162,7 +162,7 @@ export default function About() {
                 initial="hidden"
                 whileInView="visible"
                 variants={titleVariants2}
-                transition={{ duration: 0.6}}
+                transition={{ duration: 0.5}}
                 
               >
                 Professional Voice Actor 
@@ -174,7 +174,7 @@ export default function About() {
                 initial="hidden"
                 whileInView="visible"
                 variants={titleVariants3}
-                transition={{ duration: 0.8}}
+                transition={{ duration: 0.6}}
                 
               >
                 BA Sociology/Psychology 
@@ -186,7 +186,7 @@ export default function About() {
                 initial="hidden"
                 whileInView="visible"
                 variants={titleVariants4}
-                transition={{ duration: 1.0}}
+                transition={{ duration: 0.7}}
                 
               >
                 Lighthouse Labs Alumni 
@@ -199,21 +199,21 @@ export default function About() {
                 initial="hidden"
                 whileInView="visible"
                 variants={detailVariants}
-                transition={{ duration: 1.1}}
+                transition={{ duration: 0.8}}
               >Passionate, driven, and always looking to learn</MotionDiv>
               
               <MotionDiv
                 initial="hidden"
                 whileInView="visible"
                 variants={detailVariants}
-                transition={{ duration: 1.2}}
+                transition={{ duration: 0.8}}
                 >As a Web Developer, my goal is to continually add to my knowledge base and harness it to create products that are not only modern, but have the user-experience the focal point.</MotionDiv> 
              
               <MotionDiv
                 initial="hidden"
                 whileInView="visible"
                 variants={detailVariants}
-                transition={{ duration: 1.3}}
+                transition={{ duration: 0.8}}
                 >My background in entertainment and social sciences provides me with a unique perspective on how to approach problems and find solutions.</MotionDiv>
             </Details>
           </Left>
@@ -226,7 +226,7 @@ export default function About() {
                     initial="hidden"
                     whileInView="visible"
                     variants={picVariants1}
-                    transition={{ duration: 1.0}}
+                    transition={{ duration: 0.8}}
                   >
                     <Image src={studio5} alt='studio2' className='h-full w-full object-cover rounded-sm shadow-md hover:shadow-xl hover:shadow-black shadow-black'/>
                   </MotionDiv>
@@ -235,7 +235,7 @@ export default function About() {
                     initial="hidden"
                     whileInView="visible"
                     variants={picVariants2}
-                    transition={{ duration: 1.1}}
+                    transition={{ duration: 0.9}}
                   >
                     <Image src={studio3} alt='studio2' className='h-full w-full object-cover rounded-sm shadow-md hover:shadow-xl hover:shadow-black shadow-black'/>
                   </MotionDiv>
@@ -245,7 +245,7 @@ export default function About() {
                   initial="hidden"
                   whileInView="visible"
                   variants={picVariants3}
-                  transition={{ duration: 1.2}}
+                  transition={{ duration: 1.0}}
                 >
                   <Image src={studio2} alt='studio2' className='h-full w-[50%] object-cover rounded-sm shadow-md hover:shadow-xl hover:shadow-black shadow-black'/>
                 </MotionDiv>
