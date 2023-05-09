@@ -242,7 +242,7 @@ export default function About() {
                       variants={picVariants1}
                       transition={{ duration: 0.8}}
                     >
-                      <Image src={studio5} alt='studio2' className='h-full w-full object-cover rounded-sm shadow-md hover:shadow-xl hover:shadow-black shadow-black'/>
+                      <Image src={studio5} alt='studio2' priority={true} className='h-full w-full object-cover rounded-sm shadow-md hover:shadow-xl hover:shadow-black shadow-black'/>
                     </MotionDiv>
                     <MotionDiv
                       className='h-full w-[50%]'
@@ -251,7 +251,7 @@ export default function About() {
                       variants={picVariants2}
                       transition={{ duration: 0.9}}
                     >
-                      <Image src={studio3} alt='studio2' className='h-full w-full object-cover rounded-sm shadow-md hover:shadow-xl hover:shadow-black shadow-black'/>
+                      <Image src={studio3} alt='studio2' priority={true} className='h-full w-full object-cover rounded-sm shadow-md hover:shadow-xl hover:shadow-black shadow-black'/>
                     </MotionDiv>
                   </MotionDiv>
                   <MotionDiv
@@ -261,7 +261,7 @@ export default function About() {
                     variants={picVariants3}
                     transition={{ duration: 1.0}}
                   >
-                    <Image src={studio2} alt='studio2' className='h-full w-[50%] object-cover rounded-sm shadow-md hover:shadow-xl hover:shadow-black shadow-black'/>
+                    <Image src={studio2} alt='studio2' priority={true} className='h-full w-[50%] object-cover rounded-sm shadow-md hover:shadow-xl hover:shadow-black shadow-black'/>
                   </MotionDiv>
                 </StudioPics>
               </Photos>
