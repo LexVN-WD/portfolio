@@ -1,6 +1,12 @@
 'use client';
 import Image from 'next/image'
 import tw from 'tailwind-styled-components';
+import { MotionDiv } from '../pages/index';
+import { BsTerminalFill } from 'react-icons/bs'
+import { IoIosMicrophone } from 'react-icons/io'
+import { FaGraduationCap } from 'react-icons/fa'
+import { SiLighthouse } from 'react-icons/si'
+
 
 //Media
 import studio from 'public/static/studio.jpg'
@@ -24,10 +30,11 @@ const Container = tw.div`
 const Left = tw.div`
   flex
   flex-col
-  justify-around
+  justify-center
   items-center
-  w-[40%]
+  w-[45%]
   h-full
+
 `;
 
 const Right = tw.div`
@@ -35,24 +42,35 @@ const Right = tw.div`
   flex-col
   justify-around
   items-center
-  w-[60%]
+  w-[55%]
   h-full
 `;
 
 
 const Titles = tw.p`
-  text-3xl
+  text-5xl
+  font-bold
   text-center
-  w-full
+  w-[95%]
+  h-[30%]
+  flex
+  flex-col
+  justify-end
+  gap-5
 `;
 
 
 const Details = tw.p`
   text-2xl
-  text-center
   w-full
+  h-[40%]
+  text-center
+  font-bold
   flex
-  flex-row
+  flex-col
+  justify-center
+  items-center
+  gap-2
 `;
 
 const Photos = tw.div`
@@ -82,10 +100,15 @@ export default function About() {
       <Container id="about">
           <Left>
             <Titles>
-              Junior Web Developer, Professional Voice Actor, BA in Sociology/Psychology and a Lighthouse Labs Alumni.
+              <MotionDiv className='flex flex-row justify-between w-full'>Junior Web Developer <BsTerminalFill/></MotionDiv>
+              <MotionDiv className='flex flex-row justify-between w-full'>Professional Voice Actor <IoIosMicrophone/></MotionDiv>
+              <MotionDiv className='flex flex-row justify-between w-full'>BA Sociology/Psychology <FaGraduationCap /></MotionDiv>
+              <MotionDiv className='flex flex-row justify-between w-full'>Lighthouse Labs Alumni <SiLighthouse /></MotionDiv>
             </Titles>
             <Details>
-              Passionate, driven, and always looking to learn. As a Web Developer, my goal is to continually add to my knowledge base and harness it to create products that are not only modern, but have the user-experience as a focal point in its design. Throughout my life I have always tried to understand the inner machinations of technology and society. I firmly believe that by understanding how the modern world impacts the self, it can provide a deeper sense of appreciation and connection in this digital era. My background in entertainment and social sciences provides me with a unique perspective on how to approach problems and find solutions.
+              <p className='text-3xl'>Passionate, driven, and always looking to learn</p>
+              <p>As a Web Developer, my goal is to continually add to my knowledge base and harness it to create products that are not only modern, but have the user-experience the focal point.</p> 
+              <p>My background in entertainment and social sciences provides me with a unique perspective on how to approach problems and find solutions.</p>
             </Details>
           </Left>
           <Right>
