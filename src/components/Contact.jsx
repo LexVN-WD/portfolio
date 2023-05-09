@@ -79,7 +79,7 @@ export default function Contact() {
               <a href="https://www.linkedin.com/in/lexvannugent/" target="_blank">LinkedIn</a>
             </div>
             <LoadScript
-                googleMapsApiKey={apiKey}
+                googleMapsApiKey="AIzaSyAu1bRoog7GvCXdJXjoFIr1bxxo361OxQA"
               >
                 <GoogleMap
                   id='google-map-script'
