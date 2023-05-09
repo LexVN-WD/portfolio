@@ -48,6 +48,7 @@ export default function Nav() {
 
 
    return (
+    <>
     <Section>
       <Container>
         <Links>
@@ -55,13 +56,14 @@ export default function Nav() {
             <Image src={logo} contain="true" alt='logo' className="h-full w-auto"/>
           </Logo>
           <List>
-            <Link href="#home" className="hover:border-b-4 hover:border-black">Home</Link>
-            <Link href="#about" className="hover:border-b-4 hover:border-black">About</Link>
-            <Link href="#portfolio" className="hover:border-b-4 hover:border-black">Portfolio</Link>
-            <Link href="#contact" className="hover:border-b-4 hover:border-black">Contact</Link>
+            <Link href="#home" className="hover:border-b-4 hover:border-[#ff6699]">Home</Link>
+            <Link href="#about" className="hover:border-b-4 hover:border-[#ff6699]">About</Link>
+            <Link href="#portfolio" className="hover:border-b-4 hover:border-[#ff6699]">Portfolio</Link>
+            <Link href="#contact" className="hover:border-b-4 hover:border-[#ff6699]">Contact</Link>
           </List>
         </Links>
       </Container>
     </Section>
+    </>
   );
 };

@@ -1,13 +1,13 @@
 'use client';
 
 import { useState } from 'react';
-import { motion } from "framer-motion"
 import { MotionDiv, MotionSection } from '../pages/index';
 import tw from 'tailwind-styled-components';
 import { GoogleMap, LoadScript } from '@react-google-maps/api';
 
 const Container = tw.div`
 scroll-smooth
+snap-end
 min-h-[85vh]
 w-[80vw]
 flex
